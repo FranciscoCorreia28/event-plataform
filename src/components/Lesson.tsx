@@ -1,20 +1,39 @@
-export function Lesson() {
+
+import { CheckCircle, Lock } from "phosphor-react";
+
+interface LessonProps {
+    title: string;
+    slug?: string;
+    availableAt: Date;
+    type: "live" | "class"
+}
+export function Lesson(props: LessonProps) {
+    const isAvailable = false;
     return (
         <a href="#">
             <span className="text-gray-300">
-                Segunda • 21 de junho • 19h00
+                {props.availableAt.toString()}
             </span>
             <div className="rounded border border-gray-500 p-4 mt-2">
                 <header className="flex items-center justify-between">
-                    <span className="text-sm text-blue-500 font-medium">
-                        Conteúdo liberado
-                    </span>
+                    {isAvailable ? (
+                        <span className="text-sm text-blue-500 font-medium flex items-center gap-2">
+                            <CheckCircle size={20} />
+                            Conteúdo liberado
+                        </span>
+                    ) : (
+                        <span className="text-sm text-orange-500 font-medium flex items-center gap-2">
+                            <Lock size={20} />
+                            Em breve
+                        </span>
+                    )}
+
                     <span className="text-xs text-white rounded border border-green-200 py-[0.125rem] px-2">
-                        AO VIVO
+                        {props.type === "live" ? "AO VIVO" : "Conteudo Prático"}
                     </span>
                 </header>
                 <strong className="text-gray-200 mt-5 block">
-                    Abertura do evento Ignite Lab
+                    {props.title}
                 </strong>
             </div>
         </a>

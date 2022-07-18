@@ -7,13 +7,11 @@ export function Sidebar(){
                 Cronograma de Aulas
             </span>
             <div className="flex flex-col gap-8">
-                <Lesson/>
-                <Lesson/>
-                <Lesson/>
-                <Lesson/>
-                <Lesson/>
-                <Lesson/>
-                <Lesson/>
+                <Lesson 
+                availableAt={new Date("10-10-2022")} 
+                type="live" 
+                title="Abertura do evento Ignite Labs"  />
+                
             </div>
         </aside>
     )
