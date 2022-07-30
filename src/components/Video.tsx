@@ -1,11 +1,15 @@
+import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
-
+import '@vime/core/themes/default.css';
 export function Video() {
     return (
         <div className="flex-1">
             <div className="bg-black flex justify-center">
                 <div className="h-full w-full max-w-[1100px] max-h-[68vh] aspect-video ">
-
+                <Player>
+                    <Youtube videoId="Bbi4WItP-Uo"/>
+                    <DefaultUi />
+                </Player>
                 </div>
             </div>
             <div className=" flex justify-between p-8 max-w-[1100px] mx-auto">
